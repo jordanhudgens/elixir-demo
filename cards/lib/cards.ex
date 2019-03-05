@@ -36,6 +36,10 @@ defmodule Cards do
     end
   end
 
+  @doc """
+    Composes the `create_deck`, `shuffle`, and `deal` methods.
+    And returns a hand of size n
+  """
   def create_hand(hand_size) do
     Cards.create_deck
     |> Cards.shuffle

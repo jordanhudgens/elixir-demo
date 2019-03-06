@@ -3,6 +3,17 @@ defmodule Cards do
     Provides the ability to manage cards
   """
 
+  @doc """
+    Created a prepopulated deck with values and suits
+
+  ## Examples
+
+      iex(1)> deck = Cards.create_deck
+      ["Ace of Spades", "Two of Spades", "Three of Spades", "Four of Spades",
+       "Ace of Clubs", "Two of Clubs", "Three of Clubs", "Four of Clubs",
+       "Ace of Hearts", "Two of Hearts", "Three of Hearts", "Four of Hearts",
+       "Ace of Diamonds", "Two of Diamonds", "Three of Diamonds", "Four of Diamonds"]
+  """
   def create_deck do
     values = ["Ace", "Two", "Three", "Four"]
     suits = ["Spades", "Clubs", "Hearts", "Diamonds"]
@@ -16,6 +27,15 @@ defmodule Cards do
     Enum.shuffle(deck)
   end
 
+  @doc """
+    Checks to see if a card is in a deck
+
+  ## Examples
+
+      iex(1)> deck = Cards.create_deck
+      iex(2)> Cards.contains?(deck, "Two of Hearts")
+      true
+  """
   def contains?(deck, card) do
     Enum.member?(deck, card)
   end
@@ -38,16 +58,7 @@ defmodule Cards do
 
   @doc """
     Composes the `create_deck`, `shuffle`, and `deal` methods.
-    And returns a hand of size n
-
-  ## Examples
-
-      iex> hand = Cards.create_hand(5)
-      {["Three of Spades", "Two of Hearts", "Two of Spades", "Ace of Hearts",
-        "Four of Clubs"],
-       ["Three of Clubs", "Ace of Clubs", "Two of Diamonds", "Four of Hearts",
-        "Four of Spades", "Two of Clubs", "Ace of Spades", "Ace of Diamonds",
-        "Three of Hearts", "Four of Diamonds", "Three of Diamonds"]}
+    And returns a hand of size n.
   """
   def create_hand(hand_size) do
     Cards.create_deck

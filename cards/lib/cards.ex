@@ -39,6 +39,15 @@ defmodule Cards do
   @doc """
     Composes the `create_deck`, `shuffle`, and `deal` methods.
     And returns a hand of size n
+
+  ## Examples
+
+      iex> hand = Cards.create_hand(5)
+      {["Three of Spades", "Two of Hearts", "Two of Spades", "Ace of Hearts",
+        "Four of Clubs"],
+       ["Three of Clubs", "Ace of Clubs", "Two of Diamonds", "Four of Hearts",
+        "Four of Spades", "Two of Clubs", "Ace of Spades", "Ace of Diamonds",
+        "Three of Hearts", "Four of Diamonds", "Three of Diamonds"]}
   """
   def create_hand(hand_size) do
     Cards.create_deck

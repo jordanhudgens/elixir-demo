@@ -40,6 +40,19 @@ defmodule Cards do
     Enum.member?(deck, card)
   end
 
+  @doc """
+    Deals a collection of cards of a given hand size
+
+  ## Examples
+
+      iex(1)> deck = Cards.create_deck
+      iex(2)> Cards.deal(deck, 5)
+      {["Ace of Spades", "Two of Spades", "Three of Spades", "Four of Spades",
+        "Ace of Clubs"],
+       ["Two of Clubs", "Three of Clubs", "Four of Clubs", "Ace of Hearts",
+        "Two of Hearts", "Three of Hearts", "Four of Hearts", "Ace of Diamonds",
+        "Two of Diamonds", "Three of Diamonds", "Four of Diamonds"]}
+  """
   def deal(deck, hand_size) do
     Enum.split(deck, hand_size)
   end
